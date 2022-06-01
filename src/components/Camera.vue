@@ -2,16 +2,17 @@
     <div id="camera-container">
         <video autoplay ref="video" id="video"></video>
 
-        <div id="slot-container">
-            <slot></slot>
-        </div>
+<!--        <div id="slot-container">-->
+<!--            <slot></slot>-->
+<!--        </div>-->
+      <canvas ref="canvas" id="canvas"></canvas>
     </div>
 
-    <canvas ref="canvas" id="canvas"></canvas>
+
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, onUnmounted, PropType, ref } from "vue";
+import { defineComponent, onMounted, onUnmounted, PropType, Ref, ref } from "vue";
 import { MediaDeviceKind } from "./media-device-kind";
 import { Resolution } from "./resolution";
 
@@ -33,7 +34,7 @@ export default defineComponent({
         resolution: {
             type: Object as PropType<Resolution>,
             default: () => {
-                return { width: 1920, height: 1080 };
+                return { width: 600, height: 400 };
             },
         },
         facingMode: {
@@ -192,11 +193,15 @@ export default defineComponent({
 }
 
 #video {
-    width: 100%;
-    height: 100%;
+    /*width: 100%;*/
+    /*height: 100%;*/
+    display: none;
 }
 
 #canvas {
-    display: none;
+    /*width: 600px;*/
+    /*height: 400px;*/
+    /*display: none;*/
+
 }
 </style>
