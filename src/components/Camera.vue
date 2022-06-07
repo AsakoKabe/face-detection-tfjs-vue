@@ -2,17 +2,22 @@
     <div id="camera-container">
         <video autoplay ref="video" id="video"></video>
 
-<!--        <div id="slot-container">-->
-<!--            <slot></slot>-->
-<!--        </div>-->
-      <canvas ref="canvas" id="canvas"></canvas>
+        <!--        <div id="slot-container">-->
+        <!--            <slot></slot>-->
+        <!--        </div>-->
+        <canvas ref="canvas" id="canvas"></canvas>
     </div>
-
-
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, onUnmounted, PropType, Ref, ref } from "vue";
+import {
+    defineComponent,
+    onMounted,
+    onUnmounted,
+    PropType,
+    Ref,
+    ref,
+} from "vue";
 import { MediaDeviceKind } from "./media-device-kind";
 import { Resolution } from "./resolution";
 
@@ -206,6 +211,5 @@ export default defineComponent({
     /*width: 600px;*/
     /*height: 400px;*/
     /*display: none;*/
-
 }
 </style>

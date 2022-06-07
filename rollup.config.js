@@ -11,7 +11,7 @@ function createEntry(options) {
             exports: "default",
             file: options.file,
             format: options.format,
-            name: "SimpleVueCamera",
+            name: "FaceDetection",
         },
         plugins: [
             vue({
