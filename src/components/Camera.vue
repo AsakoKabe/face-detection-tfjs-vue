@@ -68,7 +68,6 @@ export default defineComponent({
         onUnmounted(() => stop());
 
         const video = ref<HTMLVideoElement>();
-        console.log(video.value?.height, video.value?.width);
         const canvas = ref<HTMLCanvasElement>();
         const stream = ref<MediaStream>();
 

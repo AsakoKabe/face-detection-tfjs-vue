@@ -41,6 +41,19 @@
                     </a>
                 </div>
             </div>
+            <div class="devices">
+                <p class="description">Camera device:</p>
+
+                <select @change="changeCamera">
+                    <option
+                        v-for="camera in cameras"
+                        :key="camera"
+                        :value="camera.deviceId"
+                    >
+                        {{ camera.deviceId.slice(0, 20) }}
+                    </option>
+                </select>
+            </div>
         </div>
     </div>
     <!--        <div>-->
@@ -50,16 +63,6 @@
     <!--            <button @click="resume">Resume</button>-->
     <!--            <button @click="snapshot">Snapshot</button>-->
     <!--        </div>-->
-
-    <!--    <select @change="changeCamera">-->
-    <!--        <option-->
-    <!--            v-for="camera in cameras"-->
-    <!--            :key="camera"-->
-    <!--            :value="camera.deviceId"-->
-    <!--        >-->
-    <!--            {{ camera.deviceId }}-->
-    <!--        </option>-->
-    <!--    </select>-->
 </template>
 
 <script lang="ts">
@@ -207,12 +210,13 @@ export default defineComponent({
     height: 100%;
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     overflow: auto;
 }
 
 .root {
-    flex-grow: 1;
+    /*flex-grow: 1;*/
+  flex-basis: 80%;
 }
 
 .title {
@@ -246,7 +250,13 @@ export default defineComponent({
     align-items: center;
     flex-direction: column;
 }
-.info {
-    margin-left: 10%;
+.devices {
+    justify-content: center;
+  align-items: center;
+
+    display: flex;
+    flex-direction: column;
+    /*width: 10%;*/
+    /*padding-right: 20%;*/
 }
 </style>
