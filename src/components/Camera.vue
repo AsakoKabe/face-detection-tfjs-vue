@@ -68,6 +68,7 @@ export default defineComponent({
         onUnmounted(() => stop());
 
         const video = ref<HTMLVideoElement>();
+        console.log(video.value?.height, video.value?.width);
         const canvas = ref<HTMLCanvasElement>();
         const stream = ref<MediaStream>();
 
@@ -211,5 +212,7 @@ export default defineComponent({
     /*width: 600px;*/
     /*height: 400px;*/
     /*display: none;*/
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 </style>
