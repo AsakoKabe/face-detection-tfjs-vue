@@ -72,6 +72,7 @@ import "@tensorflow/tfjs";
 import * as blazeface from "@tensorflow-models/blazeface";
 import { NormalizedFace } from "@tensorflow-models/blazeface/dist/face";
 import * as tf from "@tensorflow/tfjs-core";
+import { isMobile } from "@tensorflow/tfjs-core/dist/device_util";
 
 export default defineComponent({
     name: "App",
@@ -85,8 +86,12 @@ export default defineComponent({
 
         let ctx: CanvasRenderingContext2D;
 
-        const width = 900;
-        const height = 600;
+        let width = 900;
+        let height = 600;
+        if (isMobile()) {
+            width = 300;
+            height = 200;
+        }
 
         let model: Promise<blazeface.BlazeFaceModel>;
 
@@ -216,7 +221,7 @@ export default defineComponent({
 
 .root {
     /*flex-grow: 1;*/
-  flex-basis: 80%;
+    flex-basis: 80%;
 }
 
 .title {
@@ -252,7 +257,7 @@ export default defineComponent({
 }
 .devices {
     justify-content: center;
-  align-items: center;
+    align-items: center;
 
     display: flex;
     flex-direction: column;

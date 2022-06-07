@@ -20,9 +20,14 @@ import {
 } from "vue";
 import { MediaDeviceKind } from "./media-device-kind";
 import { Resolution } from "./resolution";
+import { isMobile } from "@tensorflow/tfjs-core/dist/device_util";
 
-const width = 900;
-const height = 600;
+let width = 900;
+let height = 600;
+if (isMobile()) {
+    width = 300;
+    height = 200;
+}
 
 export default defineComponent({
     name: "Camera",
