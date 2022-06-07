@@ -16,6 +16,9 @@ import { defineComponent, onMounted, onUnmounted, PropType, Ref, ref } from "vue
 import { MediaDeviceKind } from "./media-device-kind";
 import { Resolution } from "./resolution";
 
+const width = 900;
+const height = 600;
+
 export default defineComponent({
     name: "Camera",
     components: {},
@@ -34,7 +37,7 @@ export default defineComponent({
         resolution: {
             type: Object as PropType<Resolution>,
             default: () => {
-                return { width: 600, height: 400 };
+                return { width: width, height: height };
             },
         },
         facingMode: {
@@ -182,6 +185,7 @@ export default defineComponent({
     position: relative;
     width: 100%;
     height: 100%;
+    margin-top: 1%;
 }
 
 #slot-container {

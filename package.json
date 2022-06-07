@@ -4,34 +4,14 @@
     "private": false,
     "main": "./dist/simple-vue-camera.umd.js",
     "types": "dist",
-    "author": {
-        "name": "Bastiaan Jansen",
-        "email": "Bastiaanj7@outlook.com"
-    },
-    "files": [
-        "dist",
-        "README.md"
-    ],
-    "keywords": [
-        "vue",
-        "vuejs",
-        "vue-camera",
-        "camera-component",
-        "camera",
-        "webcam"
-    ],
-    "license": "MIT",
+
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
         "build-lib": "rollup -c rollup.config.js"
     },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/BastiaanJansen/simple-vue-camera"
-    },
-    "description": "A simple to use, but extensive, camera component for Vue 3 with Typescript support to create great camera experiences.",
+
     "dependencies": {
         "@tensorflow-models/blazeface": "^0.0.7",
         "@tensorflow/tfjs": "^3.18.0",
